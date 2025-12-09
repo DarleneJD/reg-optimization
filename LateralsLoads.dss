@@ -1,0 +1,113 @@
+! ====================================================================
+! LateralsLoads.dss
+! Arquivo gerado automaticamente via Python
+! Cargas nas barras laterais do modelo IEEE13_v1
+! Cada lateral associada a um LoadShape diário (LoadShapes-2min)
+! ====================================================================
+
+/* New LoadShape.profile1 npts=720 interval=1 csvfile=profile1.txt
+New LoadShape.profile6 npts=720 interval=1 csvfile=profile6.txt
+New LoadShape.profile10 npts=720 interval=1 csvfile=profile10.txt
+New LoadShape.profile4 npts=720 interval=1 csvfile=profile4.txt
+New LoadShape.profile5 npts=720 interval=1 csvfile=profile5.txt */
+
+// Modificações Darlene Dullius 25/11
+new loadshape.demand_bloque_A_Torre_I		npts=2880 interval=1.0 PQCSVfile=demand_bloque_A_Torre_I.txt action=normalize !Pmax=1400 Qmax=100
+new loadshape.demand_bloque_A_Torre_II		npts=2880 interval=1.0 PQCSVfile=demand_bloque_A_Torre_II.txt action=normalize !Pmax=1400 Qmax=100
+new loadshape.demand_bloque_A_Torre_III		npts=2880 interval=1.0 PQCSVfile=demand_bloque_A_Torre_III.txt action=normalize !Pmax=1400 Qmax=100
+new loadshape.demand_bloque_CT_Infra		npts=2880 interval=1.0 PQCSVfile=demand_bloque_CT_Infra.txt action=normalize !Pmax=1400 Qmax=100
+new loadshape.demand_bloque_B_K				npts=2880 interval=1.0 PQCSVfile=demand_bloque_B_K.txt action=normalize !Pmax=1400 Qmax=100
+new loadshape.demand_bloque_C_D				npts=2880 interval=1.0 PQCSVfile=demand_bloque_C_D.txt action=normalize !Pmax=1400 Qmax=100
+new loadshape.demand_bloque_E_F				npts=2880 interval=1.0 PQCSVfile=demand_bloque_E_F.txt action=normalize !Pmax=1400 Qmax=100
+new loadshape.demand_bloque_L_1				npts=2880 interval=1.0 PQCSVfile=demand_bloque_L_1.txt action=normalize !Pmax=1400 Qmax=100
+new loadshape.demand_bloque_L_2				npts=2880 interval=1.0 PQCSVfile=demand_bloque_L_2.txt action=normalize !Pmax=1400 Qmax=100
+new loadshape.demand_bloque_L_3				npts=2880 interval=1.0 PQCSVfile=demand_bloque_L_3.txt action=normalize !Pmax=1400 Qmax=100
+new loadshape.demand_bloque_Data_Center		npts=2880 interval=1.0 PQCSVfile=demand_bloque_Data_Center.txt action=normalize !Pmax=1400 Qmax=100
+new loadshape.demand_bloque_Ar_Condicionado	npts=2880 interval=1.0 PQCSVfile=demand_bloque_Ar_Condicionado.txt action=normalize !Pmax=1400 Qmax=100
+! ----------------------------------------------------------------
+! Lateral 01 - trifásica (perfil: profile1)
+! ----------------------------------------------------------------
+New Load.L01_01 Bus1=B011.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_A_Torre_I status=variable
+New Load.L01_02 Bus1=B012.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_A_Torre_I status=variable
+New Load.L01_03 Bus1=B013.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_A_Torre_I status=variable
+New Load.L01_04 Bus1=B014.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_A_Torre_I status=variable
+
+! ----------------------------------------------------------------
+! Lateral 02 - trifásica (perfil: profile6)
+! ----------------------------------------------------------------
+New Load.L02_01 Bus1=B021.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_A_Torre_II status=variable
+New Load.L02_02 Bus1=B022.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_A_Torre_II status=variable
+New Load.L02_03 Bus1=B023.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_A_Torre_II status=variable
+New Load.L02_04 Bus1=B024.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_A_Torre_II status=variable
+
+! ----------------------------------------------------------------
+! Lateral 03 - trifásica (perfil: profile10)
+! ----------------------------------------------------------------
+New Load.L03_01 Bus1=B031.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_A_Torre_III status=variable
+New Load.L03_02 Bus1=B032.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_A_Torre_III status=variable
+New Load.L03_03 Bus1=B033.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_A_Torre_III status=variable
+New Load.L03_04 Bus1=B034.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_A_Torre_III status=variable
+
+! ----------------------------------------------------------------
+! Lateral 04 - trifásica (perfil: profile4)
+! ----------------------------------------------------------------
+New Load.L04_01 Bus1=B041.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_CT_Infra status=variable
+New Load.L04_02 Bus1=B042.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_CT_Infra status=variable
+New Load.L04_03 Bus1=B043.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_CT_Infra status=variable
+New Load.L04_04 Bus1=B044.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_CT_Infra status=variable
+
+! ----------------------------------------------------------------
+! Lateral 05 - trifásica (perfil: profile5)
+! ----------------------------------------------------------------
+New Load.L05_01 Bus1=B051.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_B_K status=variable
+New Load.L05_02 Bus1=B052.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_B_K status=variable
+New Load.L05_03 Bus1=B053.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_B_K status=variable
+New Load.L05_04 Bus1=B054.1.2.3 Phases=3 Conn=Wye Model=1 kV=0.48 kW=100.0 kvar=30.0 class=1 daily=demand_bloque_B_K status=variable
+
+! ----------------------------------------------------------------
+! Lateral 06 - monofásica (perfil: profile1)
+! ----------------------------------------------------------------
+New Load.L06_01 Bus1=B061.1 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_C_D status=variable
+New Load.L06_02 Bus1=B062.1 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_C_D status=variable
+New Load.L06_03 Bus1=B063.1 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_C_D status=variable
+New Load.L06_04 Bus1=B064.1 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_C_D status=variable
+
+! ----------------------------------------------------------------
+! Lateral 07 - monofásica (perfil: profile6)
+! ----------------------------------------------------------------
+New Load.L07_01 Bus1=B071.1 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_Data_Center status=variable
+New Load.L07_02 Bus1=B072.1 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_Data_Center status=variable
+New Load.L07_03 Bus1=B073.1 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_Data_Center status=variable
+New Load.L07_04 Bus1=B074.1 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_Data_Center status=variable
+
+! ----------------------------------------------------------------
+! Lateral 08 - monofásica (perfil: profile10)
+! ----------------------------------------------------------------
+New Load.L08_01 Bus1=B081.3 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_E_F status=variable
+New Load.L08_02 Bus1=B082.3 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_E_F status=variable
+New Load.L08_03 Bus1=B083.3 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_E_F status=variable
+New Load.L08_04 Bus1=B084.3 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_E_F status=variable
+
+! ----------------------------------------------------------------
+! Lateral 09 - monofásica (perfil: profile4)
+! ----------------------------------------------------------------
+New Load.L09_01 Bus1=B091.2 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_L_1 status=variable
+New Load.L09_02 Bus1=B092.2 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_L_1 status=variable
+New Load.L09_03 Bus1=B093.2 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_L_1 status=variable
+New Load.L09_04 Bus1=B094.2 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_L_1 status=variable
+
+! ----------------------------------------------------------------
+! Lateral 10 - monofásica (perfil: profile5)
+! ----------------------------------------------------------------
+New Load.L10_01 Bus1=B101.3 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_L_3 status=variable
+New Load.L10_02 Bus1=B102.3 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_L_3 status=variable
+New Load.L10_03 Bus1=B103.3 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_L_3 status=variable
+New Load.L10_04 Bus1=B104.3 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_L_3 status=variable
+
+! ----------------------------------------------------------------
+! Lateral 11 - monofásica (perfil: profile1)
+! ----------------------------------------------------------------
+New Load.L11_01 Bus1=B111.2 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_L_2 status=variable
+New Load.L11_02 Bus1=B112.2 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_L_2 status=variable
+New Load.L11_03 Bus1=B113.2 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_L_2 status=variable
+New Load.L11_04 Bus1=B114.2 Phases=1 Conn=Wye Model=1 kV=0.277 kW=30.0 kvar=9.0 class=1 daily=demand_bloque_L_2 status=variable

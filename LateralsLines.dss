@@ -1,0 +1,67 @@
+!LINE DEFINITIONS 
+! Lateral 01
+New Line.ln011		Phases=3	Bus1=B010.1.2.3	Bus2=B011.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln012		Phases=3	Bus1=B011.1.2.3	Bus2=B012.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln013		Phases=3	Bus1=B012.1.2.3	Bus2=B013.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln014		Phases=3	Bus1=B013.1.2.3	Bus2=B014.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+
+! Lateral 02
+New Line.ln021		Phases=3	Bus1=B020.1.2.3	Bus2=B021.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln022		Phases=3	Bus1=B021.1.2.3	Bus2=B022.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln023		Phases=3	Bus1=B022.1.2.3	Bus2=B023.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln024		Phases=3	Bus1=B023.1.2.3	Bus2=B024.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+
+! Lateral 03
+New Line.ln031		Phases=3	Bus1=B030.1.2.3	Bus2=B031.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln032		Phases=3	Bus1=B031.1.2.3	Bus2=B032.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln033		Phases=3	Bus1=B032.1.2.3	Bus2=B033.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln034		Phases=3	Bus1=B033.1.2.3	Bus2=B034.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+
+! Lateral 04
+New Line.ln041		Phases=3	Bus1=B040.1.2.3	Bus2=B041.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln042		Phases=3	Bus1=B041.1.2.3	Bus2=B042.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln043		Phases=3	Bus1=B042.1.2.3	Bus2=B043.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln044		Phases=3	Bus1=B043.1.2.3	Bus2=B044.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+
+! Lateral 05
+New Line.ln051		Phases=3	Bus1=B050.1.2.3	Bus2=B051.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln052		Phases=3	Bus1=B051.1.2.3	Bus2=B052.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln053		Phases=3	Bus1=B052.1.2.3	Bus2=B053.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+New Line.ln054		Phases=3	Bus1=B053.1.2.3	Bus2=B054.1.2.3 LineCode=mtx3ph	Length=0.05	units=km
+
+! Lateral 06
+New Line.ln061		Phases=1	Bus1=B060.1	Bus2=B061.1 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln062		Phases=1	Bus1=B061.1	Bus2=B062.1 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln063		Phases=1	Bus1=B062.1	Bus2=B063.1 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln064		Phases=1	Bus1=B063.1	Bus2=B064.1 LineCode=mtx1ph	Length=0.05	units=km
+
+! Lateral 07
+New Line.ln071		Phases=1	Bus1=B070.1	Bus2=B071.1 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln072		Phases=1	Bus1=B071.1	Bus2=B072.1 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln073		Phases=1	Bus1=B072.1	Bus2=B073.1 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln074		Phases=1	Bus1=B073.1	Bus2=B074.1 LineCode=mtx1ph	Length=0.05	units=km
+
+! Lateral 08
+New Line.ln081		Phases=1	Bus1=B080.3	Bus2=B081.3 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln082		Phases=1	Bus1=B081.3	Bus2=B082.3 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln083		Phases=1	Bus1=B082.3	Bus2=B083.3 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln084		Phases=1	Bus1=B083.3	Bus2=B084.3 LineCode=mtx1ph	Length=0.05	units=km
+
+! Lateral 09
+New Line.ln091		Phases=1	Bus1=B090.2	Bus2=B091.2 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln092		Phases=1	Bus1=B091.2	Bus2=B092.2 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln093		Phases=1	Bus1=B092.2	Bus2=B093.2 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln094		Phases=1	Bus1=B093.2	Bus2=B094.2 LineCode=mtx1ph	Length=0.05	units=km
+
+! Lateral 10
+New Line.ln101		Phases=1	Bus1=B100.3	Bus2=B101.3 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln102		Phases=1	Bus1=B101.3	Bus2=B102.3 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln103		Phases=1	Bus1=B102.3	Bus2=B103.3 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln104		Phases=1	Bus1=B103.3	Bus2=B104.3 LineCode=mtx1ph	Length=0.05	units=km
+
+! Lateral 11
+New Line.ln111		Phases=1	Bus1=B110.2	Bus2=B111.2 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln112		Phases=1	Bus1=B111.2	Bus2=B112.2 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln113		Phases=1	Bus1=B112.2	Bus2=B113.2 LineCode=mtx1ph	Length=0.05	units=km
+New Line.ln114		Phases=1	Bus1=B113.2	Bus2=B114.2 LineCode=mtx1ph	Length=0.05	units=km
+

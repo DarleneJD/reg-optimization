@@ -1,0 +1,50 @@
+! By Fathy Aboshady (fathy.aboshady@gmail.com)
+
+
+Clear 
+
+new circuit.IEEE13Nodeckt 
+~ basekv=115 pu=1.0 phases=3 bus1=SourceBus  
+~ Angle=30                                                      
+~ MVAsc3=20000 MVASC1=21000    ! stiffen the source to approximate inf source
+
+Redirect Transformers.dss
+Redirect Regulator.dss         ! Set to fixed tap and disable
+Redirect LineCodes.dss
+Redirect Lines.dss
+Redirect LateralsXFMR.dss
+Redirect LateralsLines.dss
+Redirect LateralsLoads.dss 	! sometimes I change the load so this may be not the used one
+
+
+//Redirect LateralsPVs2.dss	! sem fator de potencia declarado
+//Redirect LateralsPVs2_fp.dss ! com fator de potencia	unitario
+//Redirect LateralsPVs2_FPA.dss	! com fator de potencia sugerido por FPA
+//Redirect LateralsPVs2_FPAv2.dss	
+
+
+//New energymeter.Emeter1 element=Transformer.Sub terminal=1
+New monitor.powers element=Transformer.Sub terminal=1 ppolar=no mode=1
+
+
+
+//Set Voltagebases=[115, 4.16, .48]
+//calcv
+//Solve
+BusCoords IEEE13NewBusXY.csv
+		
+
+!---------------------------------------------------------------------------------------------------------------------------------------------------
+!----------------Show some Results -----------------------------------------------------------------------------------------------------------------
+!---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// Show Voltages LN Nodes
+// Show Currents Elem
+// Show Powers kVA Elem
+// Show Losses
+// Show Taps
+Set MarkTransformers=yes
+! plot circuit power max=2000 subs=y dots=y labels=y C1=$00FF0000
+!Plot Profile Phases=all
+

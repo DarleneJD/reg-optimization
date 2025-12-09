@@ -1,0 +1,375 @@
+/* !PV DEFINITIONS 
+
+New XYCurve.Eff npts=4 xarray=[.1 .2 .4 1.0] yarray=[1 1 1 1]
+New XYCurve.FatorPvsT npts=4 xarray=[0 25 75 100] yarray=[1 1 1 1] 
+New Tshape.Temp npts=24 interval=1 
+~ temp=[25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25 25]
+
+New Loadshape.Irprf1 npts=24 interval=1 mult=[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+New Loadshape.Irprf2 npts=24 interval=1 mult=[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+New Loadshape.Irprf3 npts=24 interval=1 mult=[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1]
+ */
+ 
+ 
+ // Modificacoes Darlene 25-11
+// P-T curve is per unit of rated Pmpp vs temperature
+// This one is for a Pmpp stated at 25 deg
+New XYCurve.MyPvsT 
+~ npts = 4  
+~ xarray = [0  25  75  100]
+~ yarray = [1.2 1.0 0.8  0.6] 
+
+// efficiency curve is per unit eff vs per unit power
+New XYCurve.MyEff 
+~ npts=4  
+~ xarray=[.1  .2  .4  1.0]  
+~ yarray=[.86  .9  .93  .97]  
+
+// per unit irradiance curve (per unit if "irradiance" property)
+New Loadshape.MyIrrad npts = 2880 interval = 1 mult = (file=irradiancia_2880.txt)
+
+// 24-hr temp shape curve
+New Tshape.Temp npts = 2880 interval = 1 temp = (file=temperatura_2880.txt)
+
+ 
+ 
+ ! 3-phase (all PVs are 100kW, inv=110kVA)
+! Lateral 01
+New PVSystem.PV011 phases=3 bus1=B011  kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV012 phases=3 bus1=B012 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV013 phases=3 bus1=B013 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV014 phases=3 bus1=B014 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+ ! Lateral 02
+New PVSystem.PV021 phases=3 bus1=B021  kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV022 phases=3 bus1=B022  kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV023 phases=3 bus1=B023 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV024 phases=3 bus1=B024 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+
+! Lateral 03
+New PVSystem.PV031 phases=3 bus1=B031 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV032 phases=3 bus1=B032 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV033 phases=3 bus1=B033 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV034 phases=3 bus1=B034 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+
+
+! Lateral 04
+New PVSystem.PV041 phases=3 bus1=B041 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV042 phases=3 bus1=B042 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV043 phases=3 bus1=B043 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV044 phases=3 bus1=B044 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+
+
+! Lateral 05
+New PVSystem.PV051 phases=3 bus1=B051 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV052 phases=3 bus1=B052 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV053 phases=3 bus1=B053 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV054 phases=3 bus1=B054 kV=0.48 kVA=110 irrad = 0.98 Pmpp=100 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+
+
+! 1-phase all PVs are 30kW, inv=33kVA)
+! Lateral 06
+New PVSystem.PV061 phases=1 bus1=B061.1 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV062 phases=1 bus1=B062.1 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV063 phases=1 bus1=B063.1 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV064 phases=1 bus1=B064.1 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+
+! Lateral 07
+New PVSystem.PV071 phases=1 bus1=B071.1 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV072 phases=1 bus1=B072.1 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV073 phases=1 bus1=B073.1 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV074 phases=1 bus1=B074.1 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+
+
+! Lateral 08
+New PVSystem.PV081 phases=1 bus1=B081.3 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV082 phases=1 bus1=B082.3 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV083 phases=1 bus1=B083.3 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV084 phases=1 bus1=B084.3 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+
+
+
+! Lateral 09
+New PVSystem.PV091 phases=1 bus1=B091.2 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV092 phases=1 bus1=B092.2 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV093 phases=1 bus1=B093.2 Pmpp=30 kV=0.277 kVA=33 conn=wye effcurve=Eff kvar=0
+~ P-TCurve=FatorPvsT %Pmpp=100 kvarMax=14.5 kvarMaxAbs=14.5 irradiance=1 daily=MyIrrad Tdaily=Temp  %Cutin=1	%Cutout=1
+New PVSystem.PV094 phases=1 bus1=B094.2 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+
+
+! Lateral 10
+New PVSystem.PV101 phases=1 bus1=B101.3 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV102 phases=1 bus1=B102.3 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV103 phases=1 bus1=B103.3 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV104 phases=1 bus1=B104.3 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+
+
+! Lateral 11
+New PVSystem.PV111 phases=1 bus1=B111.2 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV112 phases=1 bus1=B112.2 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV113 phases=1 bus1=B113.2 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+New PVSystem.PV114 phases=1 bus1=B114.2 kV=0.277 kVA=33 Pmpp=30 irrad = 0.98 temperature = 25 PF = 1 %cutin = 0.1 %cutout = 0.1 effcurve = Myeff P-TCurve = MyPvsT Daily = MyIrrad TDaily = Temp
+
+
+
+/* New PVSystem.PV011 phases=3 bus1=B011
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV012 phases=3 bus1=B012
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV013 phases=3 bus1=B013
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV014 phases=3 bus1=B014
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV021 phases=3 bus1=B021
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV022 phases=3 bus1=B022
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV023 phases=3 bus1=B023
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV024 phases=3 bus1=B024
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV031 phases=3 bus1=B031
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV032 phases=3 bus1=B032
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV033 phases=3 bus1=B033
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV034 phases=3 bus1=B034
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV041 phases=3 bus1=B041
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV042 phases=3 bus1=B042
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV043 phases=3 bus1=B043
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV044 phases=3 bus1=B044
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV051 phases=3 bus1=B051
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV052 phases=3 bus1=B052
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV053 phases=3 bus1=B053
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV054 phases=3 bus1=B054
+~ kV=0.48 kVA=110 Pmpp=100 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=45.8 kvarMaxAbs=45.8
+
+New PVSystem.PV061 phases=1 bus1=B061.1
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV062 phases=1 bus1=B062.1
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV063 phases=1 bus1=B063.1
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV064 phases=1 bus1=B064.1
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV071 phases=1 bus1=B071.1
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV072 phases=1 bus1=B072.1
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV073 phases=1 bus1=B073.1
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV074 phases=1 bus1=B074.1
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV081 phases=1 bus1=B081.3
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV082 phases=1 bus1=B082.3
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV083 phases=1 bus1=B083.3
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV084 phases=1 bus1=B084.3
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV091 phases=1 bus1=B091.2
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV092 phases=1 bus1=B092.2
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV093 phases=1 bus1=B093.2
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV094 phases=1 bus1=B094.2
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV101 phases=1 bus1=B101.3
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV102 phases=1 bus1=B102.3
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV103 phases=1 bus1=B103.3
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV104 phases=1 bus1=B104.3
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV111 phases=1 bus1=B111.2
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV112 phases=1 bus1=B112.2
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV113 phases=1 bus1=B113.2
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+
+New PVSystem.PV114 phases=1 bus1=B114.2
+~ kV=0.277 kVA=33 Pmpp=30 PF=1 irrad=0.98 temperature=25
+~ effcurve=MyEff P-TCurve=MyPvsT daily=MyIrrad Tdaily=Temp
+~ %cutin=0.1 %cutout=0.1 kvarMax=14.5 kvarMaxAbs=14.5
+ */

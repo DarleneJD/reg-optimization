@@ -1,0 +1,52 @@
+!TRANSFORMER DEFINITION 
+
+! THREE PHASE XFMR
+
+! This one already exists in the original system, I just changed the name to XFM01
+! and changed bus 634 name to B010.
+New Transformer.XFM01  Phases=3   Windings=2  XHL=2
+~ wdg=1 bus=633       conn=Wye kv=4.16    kva=500    %r=.55     XHT=1
+~ wdg=2 bus=B010       conn=Wye kv=0.480    kva=500    %r=.55   XLT=1
+
+New Transformer.XFM02  Phases=3   Windings=2  XHL=2
+~ wdg=1 bus=675       conn=Wye kv=4.16    kva=500    %r=.55     XHT=1
+~ wdg=2 bus=B020       conn=Wye kv=0.480    kva=500    %r=.55   XLT=1
+
+New Transformer.XFM03  Phases=3   Windings=2  XHL=2
+~ wdg=1 bus=675       conn=Wye kv=4.16    kva=500    %r=.55     XHT=1
+~ wdg=2 bus=B030       conn=Wye kv=0.480    kva=500    %r=.55   XLT=1
+
+New Transformer.XFM04  Phases=3   Windings=2  XHL=2
+~ wdg=1 bus=680       conn=Wye kv=4.16    kva=500    %r=.55     XHT=1
+~ wdg=2 bus=B040       conn=Wye kv=0.480    kva=500    %r=.55   XLT=1
+
+New Transformer.XFM05  Phases=3   Windings=2  XHL=2
+~ wdg=1 bus=671       conn=Wye kv=4.16    kva=500    %r=.55     XHT=1
+~ wdg=2 bus=B050       conn=Wye kv=0.480    kva=500    %r=.55   XLT=1
+
+
+! SINGLE PHASE XFMR
+
+New Transformer.XFM06  Phases=1   Windings=2  XHL=2
+~ wdg=1 bus=692.1        kv=2.4    kva=150    %r=.55     XHT=1
+~ wdg=2 bus=B060.1       kv=0.277    kva=150    %r=.55   XLT=1
+
+New Transformer.XFM07  Phases=1   Windings=2  XHL=2
+~ wdg=1 bus=652.1        kv=2.4    kva=150    %r=.55     XHT=1
+~ wdg=2 bus=B070.1       kv=0.277    kva=150    %r=.55   XLT=1
+
+New Transformer.XFM08  Phases=1   Windings=2  XHL=2
+~ wdg=1 bus=611.3        kv=2.4    kva=150    %r=.55     XHT=1
+~ wdg=2 bus=B080.3       kv=0.277    kva=150    %r=.55   XLT=1
+
+New Transformer.XFM09  Phases=1   Windings=2  XHL=2
+~ wdg=1 bus=646.2        kv=2.4    kva=150    %r=.55     XHT=1
+~ wdg=2 bus=B090.2       kv=0.277    kva=150    %r=.55   XLT=1
+
+New Transformer.XFM10  Phases=1   Windings=2  XHL=2
+~ wdg=1 bus=646.3        kv=2.4    kva=150    %r=.55     XHT=1
+~ wdg=2 bus=B100.3       kv=0.277    kva=150    %r=.55   XLT=1
+
+New Transformer.XFM11  Phases=1   Windings=2  XHL=2
+~ wdg=1 bus=645.2        kv=2.4    kva=150    %r=.55     XHT=1
+~ wdg=2 bus=B110.2       kv=0.277    kva=150    %r=.55   XLT=1
