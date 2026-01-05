@@ -1,6 +1,6 @@
-# Darlene OLTC LV Optimization
+# Darlene SRV LV Optimization
 
-This repository contains the OpenDSS models and Python scripts developed for the project on reducing OLTC tap operations through coordinated adjustment of photovoltaic (PV) inverter parameters (mainly power factor settings).  
+This repository contains the OpenDSS models and Python scripts developed for the project on reducing SRV tap operations through coordinated adjustment of photovoltaic (PV) inverter parameters (mainly power factor settings).  
 The study is based on the IEEE 13-Bus Test Feeder adapted with residential/commercial “laterals” from the publicly available [dataset](https://brunel.figshare.com/articles/dataset/Open_access_data_for_the_IEEE_13_bus_system_implementation_in_OpenDSS_associated_with_the_IEEE_Access_paper_Reactive_Power_Control_of_PV_Inverters_in_Active_Distribution_Grids_with_High_PV_Penetration_/23742222) used in [Reactive Power Control of PV Inverters in Active Distribution Grids with High PV Penetration](https://ieeexplore.ieee.org/document/10196378).
 
 
@@ -69,7 +69,7 @@ The LateralsPVs2.dss (not included in this git) directly follows the configurati
 
 ## Objective of the Project
 
-This project investigates how photovoltaic inverter power-factor adjustments can reduce the total number of OLTC (On-Load Tap Changer) operations in LV distribution networks with high PV penetration.
+This project investigates how photovoltaic inverter power-factor adjustments can reduce the total number of SRV operations in LV distribution networks with high PV penetration.
 Using OpenDSS and Python automation, the methodology evaluates different PF settings applied to each PV system and measures their impact on tap activity over a full 24-hour daily simulation.
 
 The workflow integrates:
@@ -80,17 +80,17 @@ The workflow integrates:
 5. validating PF limits through a sanitization function 
 6. running the full 24-hour simulation
 7. exporting and reading the EventLog
-8. counting OLTC tap operations
+8. counting SRV tap operations
 9. evaluating whether a candidate PF vector improves or worsens tap performance 
 10. optimization through a meta-heuristic (Flower Pollination Algorithm — FPA) 
-11. (future) OLTC mechanical life impact estimation
+11. (future) SRV mechanical life impact estimation
 12. (future) PV inverter life impact estimation
 13. (future) automatic plotting and reporting
 ---
 
 ## Python Script (`FPA-13bus-MV-LV.py`)
 
-the script implements a complete optimization loop to minimize OLTC tap operations.
+the script implements a complete optimization loop to minimize SRV tap operations.
 The main features are:
 
 ### Core functionality
@@ -158,7 +158,7 @@ After convergence, the script:
 Planned enhancements already scaffolded in the code include:
 
 
-    OLTC mechanical lifetime estimation
+    SRV mechanical lifetime estimation
 
     generation of before/after voltage and tap plots
 
@@ -197,7 +197,7 @@ The following improvements and extensions are planned for future versions of thi
 - [ ] **Voltage-violation penalty integration**  
   Add penalty terms to the objective function to simultaneously minimize TAP operations and maintain voltage compliance.
 
-- [ ] **OLTC mechanical lifetime estimation**  
+- [ ] **SRV mechanical lifetime estimation**  
   Estimate accumulated mechanical stress based on tap-change frequency and derive lifetime reduction metrics.
 
 - [ ] **PV inverter lifetime impact analysis**  
